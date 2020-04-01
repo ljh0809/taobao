@@ -1,0 +1,52 @@
+/*header*/
+#header {
+  width: 100%;
+  height: 88px;
+}
+#header .header-con {
+  width: 1200px;
+  height: 88px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+#content {
+  width: 100%;
+  height: 600px;
+  min-width: 1200px;
+  background: url(../images/zhuce-bg.jpg);
+}
+#content .content-con {
+  width: 1200px;
+  height: 600px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+#content .content-con table {
+  width: 450px;
+  height: 350px;
+  background: #e9e9f3;
+}
+#content .content-con table td {
+  text-align: center;
+  font-size: 12px;
+}
+#content .content-con table td:first-child {
+  width: 80px;
+}
+#content .content-con table td:nth-child(2) {
+  width: 250px;
+}
+#content .content-con table input {
+  width: 250px;
+  height: 40px;
+}
+#content .content-con table .btn {
+  background: #ff4400;
+  border: none;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=register.css.map */

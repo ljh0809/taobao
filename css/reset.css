@@ -1,0 +1,58 @@
+body,
+html,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+input,
+dl,
+dt,
+dd {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    border: none;
+    outline: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+li {
+    list-style: none;
+}
+
+b,
+strong {
+    font-weight: normal;
+}
+
+i,
+em {
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+.clearfix:after {
+    content: ' ';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}

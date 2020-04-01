@@ -1,0 +1,223 @@
+#header {
+  width: 100%;
+  height: 120px;
+  background: #f2f2f2;
+}
+#header .header-con {
+  width: 970px;
+  height: 120px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+#nav {
+  width: 100%;
+  height: 30px;
+  background: #000;
+}
+#nav .nav-con {
+  width: 970px;
+  height: 30px;
+  background: #000000;
+  margin: 0 auto;
+}
+#nav .nav-con ul {
+  width: 410px;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#nav .nav-con ul li a {
+  color: #fff;
+}
+
+#list {
+  width: 100%;
+  height: 650px;
+}
+#list .list-con {
+  width: 970px;
+  height: 610px;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+#list .list-con .pic {
+  width: 400px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  float: left;
+  position: relative;
+}
+#list .list-con .pic .pic-t {
+  width: 400px;
+  height: 400px;
+}
+#list .list-con .pic .pic-t img {
+  width: 100%;
+  height: 100%;
+}
+#list .list-con .pic .pic-t .shade {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: gray;
+  opacity: 0.4;
+  display: none;
+  cursor: move;
+}
+#list .list-con .pic .pic-t .big {
+  width: 400px;
+  height: 400px;
+  border: 1px solid #000;
+  position: absolute;
+  top: 0px;
+  left: 103%;
+  display: none;
+  background: url(../images/big1.jpg);
+  background-size: 800px 800px;
+}
+#list .list-con .pic ul .bg {
+  border: 1px solid red;
+}
+#list .list-con .pic ul li {
+  width: 60px;
+  height: 60px;
+  border: 1px solid #000;
+  float: left;
+  margin: 0 16px;
+}
+#list .list-con .pic ul li img {
+  width: 60px;
+  height: 60px;
+}
+#list .list-con .pic-con {
+  width: 510px;
+  height: 600px;
+  margin-left: 22px;
+  float: left;
+}
+#list .list-con .pic-con h3 {
+  font-size: 16px;
+}
+#list .list-con .pic-con ul {
+  display: flex;
+  justify-content: flex-start;
+}
+#list .list-con .pic-con ul li {
+  margin-right: 5px;
+}
+#list .list-con .pic-con ul li a {
+  font-size: 12px;
+  color: #bd2e4a;
+  font-weight: bold;
+}
+#list .list-con .pic-con .price {
+  width: 510px;
+  height: 100px;
+  background: #eceaeb;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+#list .list-con .pic-con .price li {
+  width: 100%;
+}
+#list .list-con .pic-con .price li span {
+  margin-right: 33px;
+}
+#list .list-con .pic-con .price li span:nth-child(1) {
+  font-size: 12px;
+  color: #929091;
+  margin-left: 8px;
+}
+#list .list-con .pic-con .price li:nth-child(1) span:nth-child(2) {
+  color: #333333;
+  text-decoration: line-through;
+}
+#list .list-con .pic-con .price li:nth-child(2) span:nth-child(2) {
+  font-size: 22px;
+  color: #f7173c;
+  font-weight: bolder;
+}
+#list .list-con .pic-con .size {
+  width: 313px;
+  height: 36px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 90px;
+}
+#list .list-con .pic-con .size p {
+  color: #82837e;
+}
+#list .list-con .pic-con .size li {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #82837e;
+  text-align: center;
+  line-height: 32px;
+  cursor: pointer;
+}
+#list .list-con .pic-con .num {
+  width: 156px;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+#list .list-con .pic-con .num p {
+  color: #82837e;
+}
+#list .list-con .pic-con .num > div {
+  display: flex;
+}
+#list .list-con .pic-con .num > div li {
+  width: 41px;
+  height: 29px;
+  border: 1px solid #82837e;
+  line-height: 29px;
+}
+#list .list-con .pic-con .num > div .add {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 3px;
+}
+#list .list-con .pic-con .num > div .add a {
+  width: 16px;
+  height: 12px;
+  border: 1px solid #82837e;
+  line-height: 12px;
+  text-align: center;
+}
+#list .list-con .pic-con .buy {
+  width: 100%;
+  height: 110px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#list .list-con .pic-con .buy a {
+  width: 180px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+}
+#list .list-con .pic-con .buy a:nth-child(1) {
+  border: 1px solid #a9294c;
+  background: #ffeded;
+  color: #9e233f;
+}
+#list .list-con .pic-con .buy a:nth-child(2) {
+  background: #fe0036;
+  color: #fff;
+}
+
+/*# sourceMappingURL=details.css.map */
