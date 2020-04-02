@@ -1,3 +1,4 @@
+//轮播
 var btn1 = document.querySelector(".btn1");
 var btn2 = document.querySelector(".btn2");
 var lis = document.querySelectorAll(".nav-pic ul li");
@@ -55,4 +56,27 @@ ul.onmouseout = function() {
         }
         lunbo();
     }, 2000)
+}
+
+//cookie
+var username = getCookie("username");
+if (username) {
+    document.querySelector(".name").innerHTML = username;
+    document.querySelector(".span1").innerHTML = "欢迎您";
+    document.querySelector(".span2").innerHTML = username;
+    document.querySelector(".out").onclick = function() {
+        removeCookie("username");
+        document.querySelector(".name").innerHTML = "Hi,请登录";
+        document.querySelector(".span1").innerHTML = "亲，请登录";
+        document.querySelector(".span2").innerHTML = "免费注册";
+        document.querySelector(".logoin-cen").innerHTML = `
+        <a href="./logoin.html">登陆</a>
+        <a href="./register.html">注册</a>
+        `
+    }
+} else {
+    document.querySelector(".logoin-cen").innerHTML = `
+    <a href="./logoin.html">登陆</a>
+    <a href="./register.html">注册</a>
+        `
 }

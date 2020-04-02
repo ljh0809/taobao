@@ -1,3 +1,4 @@
+//放大镜
 function Enlarge(className) {
     this.box = document.querySelector("." + className);
     this.imgbox = this.box.querySelector(".pic-t");
@@ -82,3 +83,28 @@ Enlarge.prototype.fangda = function(l, t) {
     this.big.style.backgroundPosition = `-${bigL}px  -${bigT}px`;
 }
 var enlarge = new Enlarge("pic")
+
+
+
+//加载数据
+var params = window.location.search;
+var reg = /id=(\d+)/;
+var id = params.match(reg)[1];
+promiseAjax({
+    type: "post",
+    url: "./php/details.php",
+    data: {
+        id: id
+    }
+}).then(function(res) {
+    if (res.status == 200) {
+        var data = res.data;
+        document.querySelector(".middimg").setAttribute("src", data.imgpath);
+        document.querySelector(".smimg1").setAttribute("src", data.imgpath);
+        document.querySelector(".smimg2").setAttribute("src", data.smallpath);
+        document.querySelector(".tit").innerHTML = data.name;
+        document.querySelector(".price1").innerText = data.price;
+        document.querySelector(".big").style.backgroundImage = "url(" + data.imgpath + ")";
+
+    }
+})

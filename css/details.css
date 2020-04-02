@@ -55,6 +55,7 @@
 #list .list-con .pic .pic-t {
   width: 400px;
   height: 400px;
+  border: 1px solid #000;
 }
 #list .list-con .pic .pic-t img {
   width: 100%;
@@ -79,7 +80,6 @@
   top: 0px;
   left: 103%;
   display: none;
-  background: url(../images/big1.jpg);
   background-size: 800px 800px;
 }
 #list .list-con .pic ul .bg {

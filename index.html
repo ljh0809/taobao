@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/shouye.css">
+    <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/reset.css">
 </head>
 
@@ -201,31 +201,9 @@
         </div>
     </div>
 </body>
-<script src="./js/index.js"></script>
 <script src="./js/cookie.js"></script>
-<script>
-    var username = getCookie("username");
-    if (username) {
-        document.querySelector(".name").innerHTML = username;
-        document.querySelector(".span1").innerHTML = "欢迎您";
-        document.querySelector(".span2").innerHTML = username;
-        document.querySelector(".out").onclick = function() {
-            removeCookie("username");
-            document.querySelector(".name").innerHTML = "Hi,请登录";
-            document.querySelector(".span1").innerHTML = "亲，请登录";
-            document.querySelector(".span2").innerHTML = "免费注册";
-            document.querySelector(".logoin-cen").innerHTML = `
-            <a href="./logoin.html">登陆</a>
-            <a href="./register.html">注册</a>
-            `
-        }
-    } else {
-        document.querySelector(".logoin-cen").innerHTML = `
-        <a href="./logoin.html">登陆</a>
-        <a href="./register.html">注册</a>
-            `
-    }
-</script>
+<script src="./js/index.js"></script>
+
 
 
 </html>
