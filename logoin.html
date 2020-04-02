@@ -33,7 +33,7 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td> <input type="checkbox" style="width: 80px;"></td>
+                    <td> <input type="checkbox" style="width: 80px;" class="remember"></td>
                     <td style="text-align: left;">记住用户名</td>
 
                 </tr>
@@ -45,5 +45,54 @@
         </div>
     </div>
 </body>
+<script src="./js/promiseAjax.js"></script>
+<script src="./js/cookie.js"></script>
+<script>
+    var btn = document.querySelector(".btn");
+    var u = document.querySelector("[name=username]");
+    var uname = getCookie("uname");
+    if (uname) {
+        u.value = uname;
+    } else {
+        uname = "";
+    }
+
+    btn.onclick = function() {
+        var username = u.value.trim();
+        var password = document.querySelector("[name='password']").value.trim();
+        var remember = document.querySelector(".remember");
+
+        if (username == "") {
+            u.parentElement.nextElementSibling.innerText = "用户名不可为空";
+            return false;
+        }
+        if (password == "") {
+            document.querySelector("[name='password']").parentElement.nextElementSibling.innerText = "密码不可为空";
+            return false;
+        }
+        promiseAjax({
+            type: "post",
+            url: "./php/logoin.php",
+            data: {
+                username: username,
+                password: password
+            }
+        }).then(function(res) {
+            if (res.status == 200) {
+                setCookie("username", username, 3600);
+                if (remember.checked) {
+                    setCookie("uname", username, 7200);
+                } else {
+                    removeCookie("uname");
+                }
+                alert(res.msg);
+                location.href = "./shouye.html";
+            } else {
+                alert(res.msg);
+                return;
+            }
+        })
+    }
+</script>
 
 </html>

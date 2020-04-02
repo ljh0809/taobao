@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <style>
+        .caption p {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-header">
+        <h1>列表页面 <small>所有商品</small></h1>
+    </div>
+
+    <div class="container">
+        <div class="row">
+
+        </div>
+    </div>
+</body>
+<script src="./js/page.js"></script>
+<script src="./js/promiseAjax.js"></script>
+<script>
+    promiseAjax({
+        url: "./php/list.php",
+        type: "get"
+    }).then(function(res, pageData) {
+        var total = res.length;
+        var pageSize = 8;
+        new Page({
+            total: total,
+            pageSize: pageSize
+        }, function(currentPage) {
+            var str = "";
+            var arr = res.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+            for (var i = 0; i < arr.length; i++) {
+                str += ` <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="thumbnail">
+                    <img src="${arr[i].imgpath}">
+                    <div class="caption">
+                        <h3>${arr[i].name}</h3>
+                        <p>${arr[i].price}</p>
+                        <p><a href="details.html" class="btn btn-primary" role="button">查看详情</a></p>
+                    </div>
+                </div>
+            </div>`
+            }
+            document.querySelector(".row").innerHTML = str;
+        })
+    })
+</script>
+
+</html>

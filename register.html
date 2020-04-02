@@ -45,5 +45,48 @@
         </div>
     </div>
 </body>
+<script src="./js/promiseAjax.js"></script>
+<script>
+    var btn = document.querySelector(".btn");
+    btn.onclick = function() {
+        var username = document.querySelector("[name='username']").value.trim();
+        var password = document.querySelector("[name='password']").value.trim();
+        var repassword = document.querySelector("[name='repassword']").value.trim();
+
+        if (username == "") {
+            document.querySelector("[name='username']").parentElement.nextElementSibling.innerText = "用户名不可为空";
+            return false;
+        }
+        if (password == "") {
+            document.querySelector("[name='password']").parentElement.nextElementSibling.innerText = "密码不可为空";
+            return false;
+        }
+        if (repassword == "") {
+            document.querySelector("[name='repassword']").parentElement.nextElementSibling.innerText = "请确认密码";
+            return false;
+        }
+        if (repassword != password) {
+            document.querySelector("[name='repassword']").parentElement.nextElementSibling.innerText = "两次密码不一致";
+            return false;
+        }
+        promiseAjax({
+            type: "post",
+            url: "./php/register.php",
+            data: {
+                username: username,
+                password: password
+            }
+        }).then(function(res) {
+            console.log(res)
+            if (res.status == 200) {
+                alert(res.msg);
+                location.href = "./logoin.html";
+            } else {
+                alert(res.msg);
+                return;
+            }
+        });
+    }
+</script>
 
 </html>
