@@ -108,3 +108,45 @@ promiseAjax({
 
     }
 })
+
+//加入购物车
+$(".addcart").click(function() {
+    var username = getCookie("username");
+    if (!username) {
+        alert("请登入账号!");
+        location.href = "logoin.html";
+        return false;
+    }
+
+    var data = localStorage.getItem("data");
+    if (data) {
+        data = JSON.parse(data);
+        var index = data.findIndex(function(v) {
+            return v.id == id;
+        });
+        if (index >= 0) {
+            data[index].number++;
+        } else {
+            var obj = {
+                username: username,
+                id: id,
+                number: 1
+            };
+            data.push(obj);
+        }
+
+        localStorage.setItem("data", JSON.stringify(data));
+    } else {
+        var data = [];
+        var obj = {
+            username: username,
+            id: id,
+            number: 1
+        };
+        data.push(obj);
+        localStorage.setItem("data", JSON.stringify(data));
+    }
+    alert("添加成功，请去购物车结算");
+    location.href = "cart.html";
+    return false;
+})
