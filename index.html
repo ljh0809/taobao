@@ -166,7 +166,7 @@
     <!--list-->
     <div id="list">
         <div class="list-con">
-            <div class="con-box">
+            <!-- <div class="con-box">
                 <img src="./images/xiezi.jpg" alt="">
                 <div>
                     <span>￥199</span>
@@ -197,13 +197,32 @@
                     <p>小白鞋男夏季透气男鞋百搭鞋子男夏天男士白鞋休闲鞋韩版潮流板鞋</p>
                     <a href="list.html">查看更多商品</a>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </body>
 <script src="./js/cookie.js"></script>
 <script src="./js/index.js"></script>
-
-
+<script src="./js/promiseAjax.js"></script>
+<script>
+    promiseAjax({
+        url: "./php/index.php",
+        type: "get"
+    }).then(function(res) {
+        var str = "";
+        for (var i = 0; i < 4; i++) {
+            str += `<div class="con-box">
+            <img src="${res[i].imgpath}" alt="">
+                <div>
+                    <span>${res[i].price}</span>
+                    <p>${res[i].name}</p>
+                    <a href="list.html">查看更多商品</a>
+                </div>
+            </div>
+            `
+        }
+        document.querySelector(".list-con").innerHTML = str;
+    })
+</script>
 
 </html>

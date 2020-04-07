@@ -493,11 +493,12 @@
 .con-box {
     width: 250px;
     height: 366px;
-    border: 1px solid #dadada;
     margin-top: 5px;
 }
 
 .con-box img {
+    width: 220px;
+    height: 220px;
     margin: 15px 15px 27px 15px;
 }
 
