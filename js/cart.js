@@ -30,13 +30,13 @@ else {
                     <td class="checkOne"><input type="checkbox" class="one"></td>
                     <td>${res[i].name}</td>
                     <td><img src="${res[i].imgpath}" width="50" height="50"></td>
-                    <td>${res[i].price}</td>
+                    <td class="price">${res[i].price}</td>
                     <td>
                         <button class="jian">-</button>
                         <input type="text" name="number" value="${number}" data-stock="${res[i].stock}">
                         <button class="add">+</button>
                     </td>
-                    <td>${res[i].price * number}</td>
+                    <td class="sub">${res[i].price * number}</td>
                     <td><button class="remove">删除购物车</button></td>
                 </tr>
                 `
@@ -108,6 +108,7 @@ else {
                     data.splice(index, 1);
                     localStorage.setItem("data", JSON.stringify(data));
                     $(this).parent().parent().remove();
+                    subtotal();
                     if (data.length == 0) {
                         $(".tab").html("购物车还是空的哦，请去添加物品&nbsp;&nbsp;&nbsp;&nbsp;<a href='list.html'>去购物</a>")
                     }
@@ -131,11 +132,13 @@ $(".btn").click(function() {
 function subtotal() {
     var totalNum = 0;
     var totalPrice = 0;
+    var n = 1;
     $("[name='number']").each(function(i, v) {
         $(v).parent().next().text($(v).val() * $(v).parent().prev().text())
 
         if ($(v).parent().siblings(".checkOne").children(".one").prop("checked")) {
-            totalNum += $(v).val() - 0;
+            // totalNum += $(v).val() - 0;
+            totalNum = n++;
             totalPrice += $(v).parent().next().text() - 0;
         }
     });

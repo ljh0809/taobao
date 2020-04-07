@@ -65,5 +65,25 @@
   color: #e24e10;
   font-weight: bold;
 }
+#shop .shop-con .tab .totalNum {
+  font-size: 20px;
+  color: red;
+  font-weight: bolder;
+}
+#shop .shop-con .tab .totalPrice {
+  font-size: 20px;
+  color: red;
+  font-weight: bolder;
+}
+#shop .shop-con .tab .sub {
+  font-size: 18px;
+  color: red;
+  font-weight: bolder;
+}
+#shop .shop-con .tab .price {
+  font-size: 18px;
+  color: red;
+  font-weight: bolder;
+}
 
 /*# sourceMappingURL=cart.css.map */
