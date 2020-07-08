@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/register.css">
-    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="../css/reset.css">
 </head>
 
 <body>
@@ -14,7 +14,7 @@
     <div id="header">
         <div class="header-con">
             <h1>
-                <a href="#"><img src="./images/logo.png" alt=""></a>
+                <a href="#"><img src="../images/logo.png" alt=""></a>
             </h1>
         </div>
     </div>
@@ -45,8 +45,8 @@
         </div>
     </div>
 </body>
-<script src="./js/promiseAjax.js"></script>
-<script src="./js/jquery-3.4.1.min.js"></script>
+<script src="../lib/promiseAjax.js"></script>
+<script src="../lib/jquery-3.4.1.min.js"></script>
 <script>
     var btn = document.querySelector(".btn");
     btn.onclick = function() {
@@ -70,35 +70,35 @@
             document.querySelector("[name='repassword']").parentElement.nextElementSibling.innerText = "两次密码不一致";
             return false;
         }
-        // promiseAjax({
-        //     type: "post",
-        //     url: "./php/register.php",
-        //     data: {
-        //         username: username,
-        //         password: password
-        //     }
-        // }).then(function(res) {
-        //     console.log(res)
-        //     if (res.status == 200) {
-        //         alert(res.msg);
-        //         location.href = "./logoin.html";
-        //     } else {
-        //         alert(res.msg);
-        //         return;
-        //     }
-        // });
+        promiseAjax({
+            type: "post",
+            url: "../php/register.php",
+            data: {
+                username: username,
+                password: password
+            }
+        }).then(function(res) {
+            console.log(res)
+            if (res.status == 200) {
+                alert(res.msg);
+                location.href = "./logoin.html";
+            } else {
+                alert(res.msg);
+                return;
+            }
+        });
 
-        $.post('./php/register.php',{username,password},(res)=>{
-            console.log(res);
-            const res1 = JSON.parse(res);
-            if (res1.status === 200) {
-                        alert(res1.msg);
-                        location.href = "./logoin.html";
-                    } else {
-                        alert(res1.msg);
-                        return;
-                    }
-        })
+        // $.post('../php/register.php',{username,password},(res)=>{
+        //     console.log(res);
+        //     const res1 = JSON.parse(res);
+        //     if (res1.status === 200) {
+        //                 alert(res1.msg);
+        //                 location.href = "./logoin.html";
+        //             } else {
+        //                 alert(res1.msg);
+        //                 return;
+        //             }
+        // })
 
     }
 </script>

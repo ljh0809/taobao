@@ -10,7 +10,7 @@ else {
     });
     var ids = arr.join(",");
     $.ajax({
-        url: "./php/cart.php",
+        url: "../php/cart.php",
         data: {
             ids: ids
         },
@@ -110,7 +110,7 @@ else {
                     $(this).parent().parent().remove();
                     subtotal();
                     if (data.length == 0) {
-                        $(".tab").html("购物车还是空的哦，请去添加物品&nbsp;&nbsp;&nbsp;&nbsp;<a href='list.html'>去购物</a>")
+                        $(".tab").html("购物车还是空的哦，请去添加物品&nbsp;&nbsp;&nbsp;&nbsp;<a href='./list.html'>去购物</a>")
                     }
                 })
 

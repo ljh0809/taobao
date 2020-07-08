@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <style>
         .caption p {
             overflow: hidden;
@@ -28,11 +28,11 @@
         </div>
     </div>
 </body>
-<script src="./js/page.js"></script>
-<script src="./js/promiseAjax.js"></script>
+<script src="../js/page.js"></script>
+<script src="../lib/promiseAjax.js"></script>
 <script>
     promiseAjax({
-        url: "./php/list.php",
+        url: "../php/list.php",
         type: "get"
     }).then(function(res, pageData) {
         var total = res.length;

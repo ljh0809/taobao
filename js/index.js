@@ -82,7 +82,7 @@ if (username) {
 }
 //加载部分数据
 promiseAjax({
-    url: "./php/index.php",
+    url: "../php/index.php",
     type: "get"
 }).then(function(res) {
     var str = "";
@@ -92,7 +92,7 @@ promiseAjax({
             <div>
                 <span>${res[i].price}</span>
                 <p>${res[i].name}</p>
-                <a href="list.html">查看更多商品</a>
+                <a href="./list.html">查看更多商品</a>
             </div>
         </div>
         `

@@ -91,7 +91,7 @@ var reg = /id=(\d+)/;
 var id = params.match(reg)[1] ;
 promiseAjax({
     type: "post",
-    url: "./php/details.php",
+    url: "../php/details.php",
     data: {
         id: id
     }
@@ -113,7 +113,7 @@ $(".addcart").click(function() {
     var username = getCookie("username");
     if (!username) {
         alert("请登入账号!");
-        location.href = "logoin.html";
+        location.href = "./logoin.html";
         return false;
     }
 
@@ -146,6 +146,6 @@ $(".addcart").click(function() {
         localStorage.setItem("data", JSON.stringify(data));
     }
     alert("添加成功，请去购物车结算");
-    location.href = "cart.html";
+    location.href = "./cart.html";
     return false;
 })

@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/register.css">
-    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="../css/reset.css">
 </head>
 
 <body>
@@ -14,7 +14,7 @@
     <div id="header">
         <div class="header-con">
             <h1>
-                <a href="#"><img src="./images/logo.png" alt=""></a>
+                <a href="#"><img src="../images/logo.png" alt=""></a>
             </h1>
         </div>
     </div>
@@ -45,8 +45,8 @@
         </div>
     </div>
 </body>
-<script src="./js/promiseAjax.js"></script>
-<script src="./js/cookie.js"></script>
+<script src="../lib/promiseAjax.js"></script>
+<script src="../lib/cookie.js"></script>
 <script>
     var btn = document.querySelector(".btn");
     var u = document.querySelector("[name=username]");
@@ -72,7 +72,7 @@
         }
         promiseAjax({
             type: "post",
-            url: "./php/logoin.php",
+            url: "../php/logoin.php",
             data: {
                 username: username,
                 password: password
