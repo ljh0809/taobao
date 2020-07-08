@@ -85,11 +85,10 @@ Enlarge.prototype.fangda = function(l, t) {
 var enlarge = new Enlarge("pic")
 
 
-
 //加载数据
 var params = window.location.search;
 var reg = /id=(\d+)/;
-var id = params.match(reg)[1];
+var id = params.match(reg)[1] ;
 promiseAjax({
     type: "post",
     url: "./php/details.php",
@@ -97,7 +96,7 @@ promiseAjax({
         id: id
     }
 }).then(function(res) {
-    if (res.status == 200) {
+    if (res.status === 200) {
         var data = res.data;
         document.querySelector(".middimg").setAttribute("src", data.imgpath);
         document.querySelector(".smimg1").setAttribute("src", data.imgpath);

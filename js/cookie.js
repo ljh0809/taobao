@@ -10,7 +10,7 @@ function getCookie(key) {
 }
 
 function setCookie(key, value, sec = 0, path = "/") {
-    if (sec == 0) {
+    if (sec === 0) {
         document.cookie = key + "=" + value + ";path=" + path;
     } else {
         var date = new Date(+new Date() - 8 * 3600 * 1000 + sec * 1000);

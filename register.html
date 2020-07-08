@@ -46,6 +46,7 @@
     </div>
 </body>
 <script src="./js/promiseAjax.js"></script>
+<script src="./js/jquery-3.4.1.min.js"></script>
 <script>
     var btn = document.querySelector(".btn");
     btn.onclick = function() {
@@ -69,23 +70,36 @@
             document.querySelector("[name='repassword']").parentElement.nextElementSibling.innerText = "两次密码不一致";
             return false;
         }
-        promiseAjax({
-            type: "post",
-            url: "./php/register.php",
-            data: {
-                username: username,
-                password: password
-            }
-        }).then(function(res) {
-            console.log(res)
-            if (res.status == 200) {
-                alert(res.msg);
-                location.href = "./logoin.html";
-            } else {
-                alert(res.msg);
-                return;
-            }
-        });
+        // promiseAjax({
+        //     type: "post",
+        //     url: "./php/register.php",
+        //     data: {
+        //         username: username,
+        //         password: password
+        //     }
+        // }).then(function(res) {
+        //     console.log(res)
+        //     if (res.status == 200) {
+        //         alert(res.msg);
+        //         location.href = "./logoin.html";
+        //     } else {
+        //         alert(res.msg);
+        //         return;
+        //     }
+        // });
+
+        $.post('./php/register.php',{username,password},(res)=>{
+            console.log(res);
+            const res1 = JSON.parse(res);
+            if (res1.status === 200) {
+                        alert(res1.msg);
+                        location.href = "./logoin.html";
+                    } else {
+                        alert(res1.msg);
+                        return;
+                    }
+        })
+
     }
 </script>
 
