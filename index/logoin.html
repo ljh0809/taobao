@@ -33,7 +33,7 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td> <input type="checkbox" style="width: 80px;" class="remember"></td>
+                    <td> <input type="checkbox"  style="width: 80px;" class="remember"></td>
                     <td style="text-align: left;">记住用户名</td>
 
                 </tr>
@@ -81,9 +81,11 @@
             if (res.status == 200) {
                 setCookie("username", username, 3600);
                 if (remember.checked) {
-                    setCookie("uname", username, 7200);
+                    setCookie("uname", username, 3600);
+
                 } else {
                     removeCookie("uname");
+
                 }
                 alert(res.msg);
                 location.href = "./index.html";
